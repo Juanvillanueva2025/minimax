@@ -63,6 +63,8 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
         setTimeout(() => {
           onClose()
           setSubmitStatus('idle')
+          // Redirigir al Google Drive con el Mapa de Objeciones
+          window.open('https://drive.google.com/drive/folders/1RxOOaWt7x_h7VoBdRY7_hUF0eRYb3a-D?usp=drive_link', '_blank')
         }, 2000)
       } else {
         setSubmitStatus('error')
@@ -109,7 +111,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                 ¡Datos registrados!
               </h3>
               <p className="text-gray-600">
-                Pronto recibirás el Mapa de Objeciones en tu email.
+                Te estamos redirigiendo al Mapa de Objeciones... También recibirás una confirmación en tu email.
               </p>
             </div>
           ) : (

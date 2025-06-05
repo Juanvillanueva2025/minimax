@@ -88,8 +88,18 @@ export default function LinkTree() {
           </p>
         </div>
 
-        {/* Enlaces */}
+        {/* Botón especial para Mapa de Objeciones - AL INICIO */}
         <div className="space-y-4 mb-8">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="w-full inline-flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 fade-in"
+            style={{ animationDelay: '0ms' }}
+          >
+            <Download size={20} />
+            Descarga el Mapa Definitivo de Objeciones
+          </button>
+
+          {/* Enlaces adicionales */}
           {links.map((link, index) => (
             <LinkButton
               key={index}
@@ -97,21 +107,10 @@ export default function LinkTree() {
               url={link.url}
               icon={link.icon}
               description={link.description}
-              delay={index * 100}
+              delay={(index + 1) * 100} // +1 para que empiece después del botón del lead magnet
               special={link.special}
             />
           ))}
-        </div>
-
-        {/* Botón especial para Mapa de Objeciones */}
-        <div className="text-center mb-4">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="w-full inline-flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
-          >
-            <Download size={20} />
-            Descarga el Mapa Definitivo de Objeciones
-          </button>
         </div>
 
         {/* Footer */}
